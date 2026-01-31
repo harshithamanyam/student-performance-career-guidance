@@ -1,7 +1,15 @@
 name = input("Enter student name: ")
-math = int(input("Math marks: "))
-physics = int(input("Physics marks: "))
-programming = int(input("Programming marks: "))
-average = (math + physics + programming) / 3
-print("\nStudent Name:", name)
-print("Average Marks:", average)
+
+marks = []
+subjects = ["Math", "Physics", "Programming", "Communication", "Creativity"]
+
+for subject in subjects:
+    mark = int(input(f"{subject} marks: "))
+    marks.append(mark)
+
+average = sum(marks) / len(marks)
+
+print("\n--- RESULT ---")
+print("Student Name:", name)
+print("Average Marks:", round(average, 2))
+
