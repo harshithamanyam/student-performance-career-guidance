@@ -16,5 +16,8 @@ soft_avg = (marks["Communication"] + marks["Creativity"]) / 2
 
 career = recommend_career(technical_avg, soft_avg)
 
-print("\nStudent Name:", name)
-print("Recommended Career:", career)
+with open("report.txt", "w") as f:
+    f.write(f"Student Name: {name}\n")
+    f.write(f"Recommended Career: {career}\n")
+
+print("Report saved successfully")
