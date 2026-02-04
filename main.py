@@ -1,25 +1,20 @@
+from utils import get_marks
+from analysis import recommend_career
+
 name = input("Enter student name: ")
 
-subjects = ["Math", "Physics", "Programming", "Communication", "Creativity"]
-marks = {}
-
-for subject in subjects:
-    marks[subject] = int(input(f"{subject} marks: "))
+marks = {
+    "Math": get_marks("Math"),
+    "Physics": get_marks("Physics"),
+    "Programming": get_marks("Programming"),
+    "Communication": get_marks("Communication"),
+    "Creativity": get_marks("Creativity")
+}
 
 technical_avg = (marks["Math"] + marks["Physics"] + marks["Programming"]) / 3
 soft_avg = (marks["Communication"] + marks["Creativity"]) / 2
 
-if technical_avg >= 80:
-    career = "Software / IT field"
-elif soft_avg >= 80:
-    career = "Management / HR"
-else:
-    career = "General skill-based career"
+career = recommend_career(technical_avg, soft_avg)
 
-print("\n--- RESULT ---")
-print("Student Name:", name)
-print("Technical Average:", technical_avg)
-print("Soft Skill Average:", soft_avg)
+print("\nStudent Name:", name)
 print("Recommended Career:", career)
-
-
