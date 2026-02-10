@@ -28,4 +28,4 @@ with open(file_name, "w") as f:
     f.write(f"Name: {name}\n")
     f.write(f"Career Recommendation: {career}\n")
 
-print("Report saved at:", file_name)
+print("Report saved successfully")
