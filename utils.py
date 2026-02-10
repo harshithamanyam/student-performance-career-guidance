@@ -1,2 +1,9 @@
 def get_marks(subject):
-    return int(input(f"{subject} marks: "))
+    while True:
+        try:
+            mark = int(input(f"{subject} marks (0-100): "))
+            if 0 <= mark <= 100:
+                return mark
+        except ValueError:
+            print("Enter a valid number")
+
